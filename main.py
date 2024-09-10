@@ -1,55 +1,25 @@
 import streamlit as st
-from langchain import LanguageChain
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
+import langchain_helper as lch
 
-# Initialize Langchain components
-text_splitter = CharacterTextSplitter()
-embeddings = OpenAIEmbeddings()
-vector_store = FAISS(embeddings)
+st.title("🐶 Pets Name Generator")
 
-# Streamlit App
-st.title("Racial Bias Detection in Alameda County Criminal Cases")
+animal_type = st.sidebar.selectbox("What is your pet?", ("Dog", "Cat", "Hamster", "Rat", "Snake", "Lizard", "Cow"))
 
-# Upload Trial Transcript
-transcript_file = st.file_uploader("Upload Trial Transcript", type="txt")
+animal_labels = {
+    "Dog": "What color is your dog?",
+    "Cat": "What color is your cat?",
+    "Hamster": "What color is your hamster?",
+    "Rat": "What color is your rat?",
+    "Snake": "What color is your snake?",
+    "Lizard": "What color is your lizard?",
+    "Cow": "What color is your cow?",
+}
 
-# Upload Jury Selection Data
-jury_file = st.file_uploader("Upload Jury Selection Data", type="csv")
+pet_color = st.sidebar.text_area(
+    label=animal_labels[animal_type],
+    max_chars=25
+)
+if pet_color:
+    response = lch.generate(animal_type, pet_color)
+    st.text(response['pet_name'])
 
-# Upload Sentencing Records
-sentencing_file = st.file_uploader("Upload Sentencing Records", type="csv")
-
-# Upload Prosecutor and Defense Statements
-statements_file = st.file_uploader("Upload Prosecutor/Defense Statements", type="txt")
-
-if transcript_file is not None:
-    # Read and process the transcript file
-    transcript_text = transcript_file.read().decode("utf-8")
-    chunks = text_splitter.split_text(transcript_text)
-    vectors = vector_store.add_texts(chunks)
-    st.write("Transcript successfully processed.")
-    st.write("Number of chunks processed:", len(chunks))
-
-if jury_file is not None:
-    # Process the jury selection data
-    st.write("Jury selection data uploaded.")
-    # Placeholder for processing logic
-
-if sentencing_file is not None:
-    # Process the sentencing records
-    st.write("Sentencing records uploaded.")
-    # Placeholder for processing logic
-
-if statements_file is not None:
-    # Read and process the statements file
-    statements_text = statements_file.read().decode("utf-8")
-    st.write("Prosecutor/Defense statements uploaded.")
-    # Placeholder for processing logic
-
-# Placeholder for analysis
-st.write("Analyzing for racial bias... (feature in development)")
-
-# Placeholder for additional features
-st.write("Future features will include detailed bias analysis and reports.")
