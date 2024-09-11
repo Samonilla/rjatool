@@ -16,8 +16,8 @@ Its about 3gb and you need an okay gpu to run it
 def generate(name):
     llm = Ollama(
         model="llama2-uncensored"
-         #callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]
-         )
+        #callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]
+        )
     
     prompt_template_name = PromptTemplate(
         input_variables = ['animal_type','pet_color'],
