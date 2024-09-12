@@ -13,15 +13,15 @@
 
 
 import streamlit as st
-#from langchain import LanguageChain
-#from langchain.text_splitter import CharacterTextSplitter
-#from langchain.embeddings import OpenAIEmbeddings
-#from langchain.vectorstores import FAISS
+import langchain_helper as lch
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
 
 # Initialize Langchain components
-#text_splitter = CharacterTextSplitter()
-#embeddings = OpenAIEmbeddings()
-#vector_store = FAISS(embeddings)
+text_splitter = CharacterTextSplitter()
+embeddings = OpenAIEmbeddings()
+vector_store = FAISS(embeddings)
 
 # Streamlit App
 st.title("Racial Bias Detection in Alameda County Criminal Cases")
@@ -65,5 +65,11 @@ if statements_file is not None:
 # Placeholder for analysis
 st.write("Analyzing for racial bias... (feature in development)")
 
+if st.button("Analyze"):
+    # Placeholder for analysis logic
+    st.write("Analysis complete.")
+
+    # Generate a response
+    response = lch.generate(transcript_text, jury_file, sentencing_file, statements_text)
+    st.write(response)
 # Placeholder for additional features
-st.write("Future features will include detailed bias analysis and reports.")

@@ -1,5 +1,5 @@
 streamlit
-langchain
+langchain-community
 openai
 faiss-cpu
 st-pages
