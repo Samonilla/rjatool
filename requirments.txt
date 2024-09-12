@@ -1,5 +1,3 @@
 streamlit
-langchain-community
-openai
-faiss-cpu
-st-pages
+langchain==0.0.9  # Adjust version as necessary
+ollama

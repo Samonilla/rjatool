@@ -2,6 +2,8 @@ from langchain.llms import Ollama
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
+# this needs llama3.1 model to be downloaded and running on your machine
+
 def generate(transcript, jury_data, sentencing_records, statements):
     llm = Ollama(model="llama3.1")
     
