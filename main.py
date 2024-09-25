@@ -9,16 +9,16 @@ text_splitter = CharacterTextSplitter()
 st.title("Racial Bias Detection in Alameda County Criminal Cases")
 
 # Upload Trial Transcript
-transcript_file = st.file_uploader("Upload Trial Transcript", type="txt")
+transcript_file = st.file_uploader("Upload Trial Transcript", type="pdf")
 
 # Upload Jury Selection Data
-jury_file = st.file_uploader("Upload Jury Selection Data", type="csv")
+jury_file = st.file_uploader("Upload Jury Selection Data", type="pdf")
 
 # Upload Sentencing Records
-sentencing_file = st.file_uploader("Upload Sentencing Records", type="csv")
+sentencing_file = st.file_uploader("Upload Sentencing Records", type="pdf")
 
 # Upload Prosecutor and Defense Statements
-statements_file = st.file_uploader("Upload Prosecutor/Defense Statements", type="txt")
+statements_file = st.file_uploader("Upload Prosecutor/Defense Statements", type="pdf")
 
 transcript_text = ""
 statements_text = ""
@@ -43,6 +43,7 @@ if statements_file is not None:
     st.write("Prosecutor/Defense statements uploaded.")
     # Placeholder for processing logic
 
+discrimination_instance = st.text_area("If you feel there was a particular instance where you experienced racial discrimination in your case, please describe it here:")
 # Placeholder for analysis
 st.write("Analyzing for racial bias... (feature in development)")
 
