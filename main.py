@@ -1,7 +1,15 @@
 import streamlit as st
 import langchain_helper as lch
 from langchain.text_splitter import CharacterTextSplitter
+from streamlit_navigation_bar import st_navbar
 
+about = st.Page(
+    "Pages/about.py",
+    title="About"
+)
+
+page = st_navbar(["Home", "About", "Chat", "Contact"])
+st.write(page)
 # Initialize Langchain components
 text_splitter = CharacterTextSplitter()
 
@@ -20,6 +28,8 @@ sentencing_file = st.file_uploader("Upload Sentencing Records", type="pdf")
 # Upload Prosecutor and Defense Statements
 statements_file = st.file_uploader("Upload Prosecutor/Defense Statements", type="pdf")
 
+
+# Pages 
 transcript_text = ""
 statements_text = ""
 
@@ -51,3 +61,16 @@ if st.button("Analyze"):
     response = lch.generate(transcript_text, jury_file, sentencing_file, statements_text)
     st.write("Analysis complete.")
     st.write(response)
+
+import streamlit as st
+
+st.title("Chat")
+st.write("Chat with our LLM about your case")
+
+with st.chat_message("user"):
+    st.write("Hello 👋")
+    prompt = st.chat_input("Say something")
+if prompt:
+    st.write(f"Chat with our RJA bot {prompt}")
+
+
