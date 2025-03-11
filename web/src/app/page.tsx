@@ -9,7 +9,7 @@ import Progress from '@/components/Progress'
 import Demo from '@/components/Demo'
 import Team from '@/components/Team'
 import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
