@@ -9,25 +9,25 @@ const Team: React.FC = () => {
     const teamMembers: TeamMember[] = [
         {
             name: "Aarya Mukherjee",
-            position: "Operations + Management",
+            position: "Project Lead",
             linkedin: "https://www.linkedin.com/in/aarya-mukherjee-293089251/",
             img: "",
         },
         {
             name: "Maya Howard",
-            position: "Operations + Management",
+            position: "Project Manager",
             linkedin: "https://www.linkedin.com/in/maya-dale-howard-651a6129b/",
             img: "",
         },
         {
             name: "Alex Forman",
-            position: "Developer + Operations",
+            position: "Operations Developer",
             linkedin: "https://www.linkedin.com/in/alex-k-forman/",
             img: "https://lh3.googleusercontent.com/a-/ALV-UjUdw9zak-oXltCXJh_amJ1qFsx9ACUuxP41u6LmRRRA_cumaVU",
         },
         {
             name: "Stephen Okita",
-            position: "Development + Operations",
+            position: "Systems Developer",
             linkedin: "https://www.linkedin.com/in/stephen-okita/",
             img: "https://lh3.googleusercontent.com/a/ACg8ocJ6Hq6XX_vvnrYsUbw28dTNLPNVAYbaToSTflwLF_hz3O1eh37J=s83-c-mo",
         },
