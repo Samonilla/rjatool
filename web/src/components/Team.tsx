@@ -9,7 +9,7 @@ const Team: React.FC = () => {
     const teamMembers: TeamMember[] = [
         {
             name: "Aarya Mukherjee",
-            position: "Project Lead",
+            position: "Program Manager",
             linkedin: "https://www.linkedin.com/in/aarya-mukherjee-293089251/",
             img: "",
         },
