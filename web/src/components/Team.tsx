@@ -27,7 +27,7 @@ const Team: React.FC = () => {
         },
         {
             name: "Stephen Okita",
-            position: "Systems Developer",
+            position: "Systems & AI Developer",
             linkedin: "https://www.linkedin.com/in/stephen-okita/",
             img: "https://lh3.googleusercontent.com/a/ACg8ocJ6Hq6XX_vvnrYsUbw28dTNLPNVAYbaToSTflwLF_hz3O1eh37J=s83-c-mo",
         },
